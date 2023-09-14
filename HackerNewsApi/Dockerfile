@@ -6,11 +6,15 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+RUN dotnet dev-certs https
+RUN dotnet dev-certs https --trust
 WORKDIR /src
 COPY ["./HackerNewsApi.csproj", "HackerNewsApi/"]
 RUN dotnet restore "HackerNewsApi/HackerNewsApi.csproj"
-COPY . .
+
 WORKDIR "/src/HackerNewsApi"
+COPY . .
+
 RUN dotnet build "HackerNewsApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
