@@ -60,9 +60,7 @@ cmd: `cd ./HackerNewsApi`, `dotnet run`
 
 Additions/Comments:
 
-This is not a RESTful Api. There is no information in the task about the implementation of all methods or any specific logic.
-I don't like the line: In addition to the above, your API should be able to efficiently service large number of requests without risking overloading of the Hacker News API.
-This is a very abstract concept. I implemented the cache option.
+I implemented the cache option.
 What could be done:
 1) Limit the number of requests (semaphor or other 'heap toggle')
 2) Make scalable microservices which call db by any message bus (rabbitmq... or mb in case when we have A LOT requests ELK)
@@ -73,8 +71,3 @@ other:
 - manual configuration of the number of threads per microservice / threads in pool (this is about performance).
 - optimize models and create custom json converter rule for model
 - all recomendation from msdn about asp.net core (webapi). (https redirection, htst and other).
-
-# P.S
-2 hours for code
-1.5 hours for container (I forgot how to setup it + I really dont remember how to install certf for local inside container)
-0.5 hour for readme
