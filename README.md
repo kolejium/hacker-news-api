@@ -67,8 +67,14 @@ What could be done:
 1) Limit the number of requests (semaphor or other 'heap toggle')
 2) Make scalable microservices which call db by any message bus (rabbitmq... or mb in case when we have A LOT requests ELK)
 3) Db cache
+4) trottling of requests for external api.
 
 other:
 - manual configuration of the number of threads per microservice / threads in pool (this is about performance).
 - optimize models and create custom json converter rule for model
+- all recomendation from msdn about asp.net core (webapi). (https redirection, htst and other).
 
+# P.S
+2 hours for code
+1.5 hours for container (I forgot how to setup it + I really dont remember how to install certf for local inside container)
+0.5 hour for readme
