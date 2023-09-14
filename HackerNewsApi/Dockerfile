@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["HackerNewsApi/HackerNewsApi.csproj", "HackerNewsApi/"]
+COPY ["./HackerNewsApi.csproj", "HackerNewsApi/"]
 RUN dotnet restore "HackerNewsApi/HackerNewsApi.csproj"
 COPY . .
 WORKDIR "/src/HackerNewsApi"
